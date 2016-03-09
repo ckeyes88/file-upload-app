@@ -1,0 +1,19 @@
+{
+  "name": "one-connection-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ckeyes88/file-upload-app.git"
+  },
+  "author": "Chip Keyes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckeyes88/file-upload-app/issues"
+  },
+  "homepage": "https://github.com/ckeyes88/file-upload-app#readme"
+}
