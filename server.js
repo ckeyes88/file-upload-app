@@ -39,7 +39,7 @@ app.use(multer({dest: './public/uploads'}).single('file'));
 // Register api middleware for adding the file to the database
 app.use('/api', api);
 
-// Renders the only front end page for all routes
+// Renders the only front end page for root route
 app.get('/', function (req, res) {
     res.render('index.html');
 });
