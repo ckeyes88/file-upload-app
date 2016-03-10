@@ -1,0 +1,47 @@
+<doctype html>
+  <html ng-app="fileUpload">
+    <head>
+      <title>File Uploader</title>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    </head>
+    <body ng-controller="mainController">
+      <header class="jumbotron text-center">
+        <h1>File Uploader</h1>
+        <h3>By Chip Keyes</h3>
+      </header>
+      <div class="container">
+        <div class="col-md-5">
+          <form>
+            <div class="form-group">
+              <label>Upload File</label>
+              <input type="file" file-model="file" accept=".csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            </div>
+            <button class="btn btn-primary" type="submit" ng-click="uploadFile()">Save File</button>
+          </form>
+        </div>
+        <div class="col-md-5 col-md-offset-1" ng-if="{{fileList}}">
+          <select ng-model="selected" ng-change="getFile(selected)" ng-options="file.filename for file in fileList">
+            <option value="">Select File</option>
+          </select>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <div class="container" ng-if="{{fileData}}">
+        <div class="col-md-4">
+          <ul class="well list-inline" ng-repeat="col in fileData[0]">
+            <li>{{col}}</li>
+          </ul>
+        </div>
+        
+      </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <!-- load jquery -->
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+      <!-- load angular -->
+      <script src="client.js"></script>
+
+    </body>
+  </html>
